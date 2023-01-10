@@ -1,0 +1,27 @@
+@keyframes onLoad {
+    from { transform: translateY(8vh); }
+    to { opacity: 1; transform: translateY(0vh); }
+}
+.text {
+    opacity: 0;
+    animation: onLoad .8s ease forwards;
+}
+header ul li a {
+    color: black;
+    text-decoration: none;
+}
+header ul {
+    list-style-type: none;
+    margin: 20px;
+    position: absolute;
+    right: 0;
+}
+header ul li {
+    display: inline;
+    margin: 10px;
+}
+header ul li:hover {
+    cursor: pointer;
+    text-decoration-line: underline;
+    text-underline-offset: 5px;
+}

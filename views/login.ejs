@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css-->
+    <link rel="stylesheet" href="/css/init.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel='stylesheet' href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' type='text/css'>
+    <!--js-->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        function login() {
+            $.ajax({
+                url: '/api/login',
+                type: 'POST',
+                data: {
+                    userId: document.getElementById("userId").value,
+                    userPw: document.getElementById("userPw").value
+                }
+            }).done((res) => {
+                if (res == '404') alert("아이디가 존재하지 않습니다");
+                if (res == '403') alert("비밀번호가 틀렸습니다");
+                if (res == '401') alert("아이디 또는 비밀번호를 제대로 써주세요");
+                if (res == '200') window.location.href='/';
+            });
+        }
+    </script>
+    <title>일기장 | 로그인</title>
+</head>
+<body>
+    <div class="container center">
+        <div class="login">
+            <input type="text" id="userId" placeholder="아이디">
+            <input type="password" id="userPw" placeholder="비밀번호">
+            <a href="/register">회원가입</a>
+            <button onclick="window.location.href='/'">홈으로</button>
+            <button onclick="login()">로그인</button>
+        </div>
+    </div>
+    <script>
+        $("#userPw").keydown((e) => {
+            if (e.keyCode == 13) login();
+        });
+    </script>
+</body>
+</html>

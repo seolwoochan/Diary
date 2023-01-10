@@ -11,6 +11,8 @@
     <!--js-->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script>
+        $(document).ready(() => $("#userId").focus());
+
         function register() {
             $.ajax({
                 url: '/api/register',

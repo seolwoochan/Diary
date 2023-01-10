@@ -1,0 +1,42 @@
+.container {
+    text-align: center;
+}
+.container h1 {
+    margin: 40px;
+}
+.container ul {
+    margin: 0 auto;
+    width: 80%;
+    text-align: left;
+    list-style: none;
+}
+.container ul li {
+    padding: 10px;
+    color: gray;
+    cursor: pointer;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    border-radius: 14px;
+}
+.container ul li:hover {
+    color: black;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .3);
+    padding: 25px;
+}
+.container ul li p {
+    font-size: 20px;
+}
+
+button {
+    width: 320px;
+    height: 40px;
+    margin-bottom: 20px;
+
+    font-size: 14px;
+
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 4px;
+    background-color: 1px solid rgb(90 ,90 ,90);
+
+    cursor: pointer;
+}

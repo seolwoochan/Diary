@@ -30,4 +30,18 @@ router.get('/register', (req, res) => {
     res.render('register.ejs');
 });
 
+router.get('/diary', (req, res) => {
+
+    if (!req.session.login) return res.redirect('/');
+
+    res.render('diary.ejs');
+});
+
+router.get('/diary/write', (req, res) => {
+    
+    if (!req.session.login) return res.redirect('/');
+
+    res.render('diary_write.ejs');
+});
+
 module.exports = router;

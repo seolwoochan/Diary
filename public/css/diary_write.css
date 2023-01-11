@@ -1,0 +1,29 @@
+body {
+    text-align: center;
+}
+
+#title, form {
+    width: 80%;
+    margin: 20px 0;
+}
+
+#title {
+    width: 100%;
+    outline: none;
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 16px;
+}
+
+form {
+    text-align: left;
+    margin: 0 auto;
+}
+
+#push {
+    margin-top: 20px;
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+}

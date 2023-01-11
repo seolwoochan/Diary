@@ -19,9 +19,9 @@
         <h1 class="none-drag">일기 목록</h1>
         <button onclick="window.location.href='/diary/write'">새로 작성하기</button>
         <ul>
-            <li><p>오늘은 날씨가 별로 좋지 않았다.</p><small>2023-01-09</small></li>
-            <li><p>오늘은 날씨가 별로 좋지 않았다.</p><small>2023-01-09</small></li>
-            <li><p>오늘은 날씨가 별로 좋지 않았다.</p><small>2023-01-09</small></li>
+            <% for (let i = 0; i < items.length; i++) { %>
+                <li onclick="window.location.href='/diary/<%= items[i].unique %>'"><p><%= items[i].userTitle %></p><small><%= items[i].time %></small></li>
+            <% } %>
         </ul>
     </div>
 </body>

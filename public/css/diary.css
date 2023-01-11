@@ -14,14 +14,19 @@
     padding: 10px;
     color: gray;
     cursor: pointer;
-    transition-duration: .3s;
     transition-timing-function: ease;
     border-radius: 14px;
+}
+.container ul li, .container ul li small {
+    transition-duration: .2s;
 }
 .container ul li:hover {
     color: black;
     box-shadow: 0 0 6px rgba(0, 0, 0, .3);
     padding: 25px;
+}
+.container ul li:hover small {
+    color: #0085ff;
 }
 .container ul li p {
     font-size: 20px;

@@ -1,0 +1,13 @@
+.container div {
+    word-break: keep-all;
+    margin: 40px;
+}
+#time {
+    color: #0085ff;
+}
+
+@media screen and (max-width: 600px) {
+    #title {
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css-->
+    <link rel="stylesheet" href="/css/init.css">
+    <link rel="stylesheet" href="/css/view.css">
+    <link rel='stylesheet' href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' type='text/css'>
+    <!--js-->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        function htmlDecode(input) {
+            var doc = new DOMParser().parseFromString(input, "text/html");
+            return doc.documentElement.textContent;
+        }
+        function onHtml(text, id) {
+            return  document.getElementById(id).innerHTML = htmlDecode(text);
+        }
+
+        $(document).ready(() => {
+            onHtml(`<%= data.userTitle %>`, `title`);
+            onHtml(`<%= data.time %>`, `time`);
+            onHtml(`<%= data.userContent %>`, `content`);
+        });
+    </script>
+    <title>일기장 | 세부 정보</title>
+</head>
+
+<body>
+    <div class="container" id="bo">
+        <div>
+            <h1 id="title"></h1>
+            <small id="time"></small>
+            <div id="content"></div>
+        </div>
+    </div>
+</body>
+
+</html>

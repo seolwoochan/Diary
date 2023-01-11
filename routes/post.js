@@ -68,4 +68,10 @@ router.post('/write', (req, res) => {
     res.redirect('/diary');
 });
 
+router.post('/trash', (req, res) => {
+    const get_unique = req.body.unique;
+
+    writes.deleteOne({ unique: get_unique }).then(() => res.send('done'));
+});
+
 module.exports = router;

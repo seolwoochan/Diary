@@ -17,16 +17,16 @@
         $(document).ready(() => {
             if (isLogin) {
                 $("header").html(`
-                    <ul>
+                    <ul class='none-drag'>
                         <li><a href="/diary">일기장</a></li>
-                        <li><a href="/info">${userId}</a></li>
+                        <li><a>${userId}</a></li>
                         <li><a href="/logout">로그아웃</a></li>
                     </ul>
                 `);
             }
             else {
                 $("header").html(`
-                    <ul>
+                    <ul class='none-drag'>
                         <li><a href="/register">회원가입</a></li>
                         <li><a href="/login">로그인</a></li>
                     </ul>
@@ -44,6 +44,10 @@
             <h1 class="text none-drag">오늘 겪었던 일들을 일기로 적어보세요</h1>
         </div>
     </div>
+    <footer>
+        use node.js
+    </footer>
+    <img src="https://pbs.twimg.com/media/EifA50BVgAAZr-X.jpg:large">
 </body>
 
 </html>

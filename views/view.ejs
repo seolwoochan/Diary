@@ -25,18 +25,33 @@
             onHtml(`<%= data.time %>`, `time`);
             onHtml(`<%= data.userContent %>`, `content`);
         });
+
+        function trash() {
+            const loca = location.href.split('/').pop();
+            $.ajax({
+                url: '/api/trash',
+                type: 'POST',
+                data: {
+                    unique: loca
+                }
+            }).done((res) => window.location.href = '/diary');
+        }
     </script>
     <title>일기장 | 세부 정보</title>
 </head>
 
 <body>
     <div class="container" id="bo">
+        <a class="none-drag" onclick="trash()" id="trash">삭제</a>
         <div>
             <h1 id="title"></h1>
             <small id="time"></small>
             <div id="content"></div>
         </div>
     </div>
+    <footer onclick="window.location.href='/diary'">
+        <h3>목록</h3>
+    </footer>
 </body>
 
 </html>

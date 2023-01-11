@@ -34,7 +34,14 @@
                 data: {
                     unique: loca
                 }
-            }).done((res) => window.location.href = '/diary');
+            }).done((res) => {
+                if (res == '404') {
+                    alert("작성자가 아닙니다");
+                }
+                else {
+                    window.location.href = '/diary'
+                }
+            });
         }
     </script>
     <title>일기장 | 세부 정보</title>

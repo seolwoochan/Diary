@@ -71,7 +71,18 @@ router.post('/write', (req, res) => {
 router.post('/trash', (req, res) => {
     const get_unique = req.body.unique;
 
-    writes.deleteOne({ unique: get_unique }).then(() => res.send('done'));
+    if (!req.session.login) return res.send('404');
+
+    writes.findOne({ unique: get_unique }).then((data) => {
+        if (data != null) {
+            if (req.session.login.userId == data.userId) {
+                writes.deleteOne({ unique: get_unique }).then(() => res.send('done'));
+            }
+            else {
+                res.send("404");
+            }
+        }
+    });
 });
 
 module.exports = router;

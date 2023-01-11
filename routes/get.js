@@ -54,14 +54,15 @@ router.get('/diary/write', (req, res) => {
 });
 
 router.get('/diary/:unique', (req, res) => {
-
-    if (!req.session.login) return res.redirect('/');
-
+    
     const get_unique = req.params.unique;
 
     writes.findOne({ unique: get_unique }).then((data) => {
         if (data != null) {
             res.render("view.ejs", { data: data });
+        }
+        else {
+            res.send("요청하신 URL은 잘못된 방식입니다");
         }
     });
 

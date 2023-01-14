@@ -1,34 +1,35 @@
 .container {
-    text-align: center;
+    text-align: left;
 }
 .container h1 {
-    margin: 40px;
+    margin: 20px 30px;
 }
-.container ul {
+.container .list {
     margin: 0 auto;
+    margin-top: 20px;
     width: 80%;
     text-align: left;
     list-style: none;
 }
-.container ul li {
+.container .list li {
     padding: 10px;
     color: gray;
     cursor: pointer;
     transition-timing-function: ease;
     border-radius: 14px;
 }
-.container ul li, .container ul li small {
+.container .list li, .container .list li small {
     transition-duration: .2s;
 }
-.container ul li:hover {
+.container .list li:hover {
     color: black;
     box-shadow: 0 0 6px rgba(0, 0, 0, .3);
     padding: 25px;
 }
-.container ul li:hover small {
+.container .list li:hover small {
     color: #0085ff;
 }
-.container ul li p {
+.container .list li p {
     font-size: 20px;
 }
 
@@ -45,4 +46,32 @@ button {
     border-radius: 14px;
 
     cursor: pointer;
+}
+
+h1, .top-menu {
+    display: inline-block;
+}
+
+h1 {
+    left: 0;
+}
+
+a {
+    color: #333333;
+    text-decoration: none;
+}
+
+hr {
+    color: #333333;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.top-menu {
+    cursor: default;
+    list-style-type: none;
+}
+.top-menu li {
+    display: inline;
+    margin: 10px;
 }

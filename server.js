@@ -8,7 +8,7 @@ const _get = require('./routes/get');
 const _post = require('./routes/post');
 
 // ****** global variables ****** //
-const port = 3000;
+const port = 80;
 const app = express();
 
 // ****** initialize ****** // 

@@ -53,6 +53,25 @@ router.get('/diary/write', (req, res) => {
     res.render('diary_write.ejs');
 });
 
+router.get('/diary/rewrite/:unique', (req, res) => {
+
+    if (!req.session.login) return res.redirect('/');
+
+    const get_unique = req.params.unique;
+
+    writes.findOne({ unique: get_unique }).then((data) => {
+        if (data != null && req.session.login.userId == data.userId) {
+            res.render('diary_rewrite.ejs', {
+                data: data
+            });
+        }
+        else {
+            res.send("수정하실 수 없습니다");
+        }
+    });
+
+});
+
 router.get('/diary/:unique', (req, res) => {
     
     const get_unique = req.params.unique;

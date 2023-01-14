@@ -7,14 +7,19 @@
 }
 
 a {
+    margin: 3px;
     transition-duration: .2s;
     transition-timing-function: ease;
     padding: 8px 20px;
     border-radius: 14px;
     cursor: pointer;
 }
-a:hover {
+#trash:hover {
     background-color: red;
+    color: white;
+}
+#rewrite:hover {
+    background-color: #0085ff;
     color: white;
 }
 
@@ -43,5 +48,9 @@ footer {
 @media screen and (max-width: 600px) {
     #title {
         font-size: 22px;
+    }
+
+    #content {
+        font-size: 16px;
     }
 }

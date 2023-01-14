@@ -68,6 +68,16 @@ router.post('/write', (req, res) => {
     res.redirect('/diary');
 });
 
+router.post('/rewrite', (req, res) => {
+    const get_title = req.body.title;
+    const get_content = req.body.content;
+    const get_unique = req.body.unique;
+
+    if (!req.session.login) return res.send('404');
+
+    writes.findOneAndUpdate({ unique: get_unique }, { userTitle: get_title, userContent: get_content }).then(() => res.redirect(`/diary/${get_unique}`));
+});
+
 router.post('/trash', (req, res) => {
     const get_unique = req.body.unique;
 

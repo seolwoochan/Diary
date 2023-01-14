@@ -16,10 +16,15 @@
 
 <body>
     <div class="container">
-        <h1 class="none-drag">일기 목록</h1>
-        <button onclick="window.location.href='/'">홈으로</button>
-        <button onclick="window.location.href='/diary/write'">새로 작성</button>
-        <ul>
+        <div class="top">
+            <h1 class="none-drag">일기 목록</h1>
+            <ul class="top-menu">
+                <li><a href="/">홈으로</a></li>
+                <li><a href="/diary/write">새로 작성</a></li>
+            </ul>
+        </div>
+        <hr>
+        <ul class="list">
             <% for (let i = 0; i < items.length; i++) { %>
                 <li onclick="window.location.href='/diary/<%= items[i].unique %>'"><p><%= items[i].userTitle %></p><small><%= items[i].time %></small></li>
             <% } %>

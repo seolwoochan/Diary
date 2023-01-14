@@ -43,6 +43,11 @@
                 }
             });
         }
+
+        function rewrite() {
+            const loca = location.href.split('/').pop();
+            window.location.href='/diary/rewrite/' + loca;
+        }
     </script>
     <title>일기장 | 세부 정보</title>
 </head>
@@ -50,6 +55,7 @@
 <body>
     <div class="container" id="bo">
         <a class="none-drag" onclick="trash()" id="trash">삭제</a>
+        <a class="none-drag" id="rewrite" onclick="rewrite()">수정</a>
         <div>
             <h1 id="title"></h1>
             <small id="time"></small>

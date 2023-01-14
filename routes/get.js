@@ -66,7 +66,7 @@ router.get('/diary/rewrite/:unique', (req, res) => {
             });
         }
         else {
-            res.send("수정하실 수 없습니다");
+            res.send(`<script>alert('수정하실 수 없습니다');window.history.back();</script>`);
         }
     });
 

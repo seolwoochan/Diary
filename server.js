@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 app.use(session({
-    secret: 'secret',
+    secret: '1234',
     resave: false,
     saveUninitialized: false
 }));

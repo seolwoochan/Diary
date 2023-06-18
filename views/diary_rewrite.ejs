@@ -18,7 +18,7 @@
             $('#editor').summernote({ lang: 'ko-KR', height: 300 });
         });
     </script>
-    <title>일기장 | 쓰기</title>
+    <title>일기장 | 수정</title>
 </head>
 <body>
     <header>
@@ -28,7 +28,7 @@
             <input type="text" id="title" name="title" value="<%= data.userTitle %>" placeholder="제목">
             <input type="text" id="unique" name="unique" value="<%= data.unique %>" readonly>
             <textarea id="editor" name="content"><%= data.userContent %></textarea>
-            <input type="submit" id="push" value="등록">
+            <input type="submit" id="push" value="수정">
         </form>
     </div>
 </body>

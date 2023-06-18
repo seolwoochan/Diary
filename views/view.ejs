@@ -17,7 +17,7 @@
             return doc.documentElement.textContent;
         }
         function onHtml(text, id) {
-            return  document.getElementById(id).innerHTML = htmlDecode(text);
+            return document.getElementById(id).innerHTML = htmlDecode(text);
         }
 
         $(document).ready(() => {
@@ -27,26 +27,28 @@
         });
 
         function trash() {
-            const loca = location.href.split('/').pop();
-            $.ajax({
-                url: '/api/trash',
-                type: 'POST',
-                data: {
-                    unique: loca
-                }
-            }).done((res) => {
-                if (res == '404') {
-                    alert("작성자가 아닙니다");
-                }
-                else {
-                    window.location.href = '/diary'
-                }
-            });
+            if (confirm("정말 삭제하시겠습니까?\n삭제하면 되돌릴 수 없습니다") == true) {
+                const loca = location.href.split('/').pop();
+                $.ajax({
+                    url: '/api/trash',
+                    type: 'POST',
+                    data: {
+                        unique: loca
+                    }
+                }).done((res) => {
+                    if (res == '404') {
+                        alert("작성자가 아닙니다");
+                    }
+                    else {
+                        window.location.href = '/diary'
+                    }
+                });
+            }
         }
 
         function rewrite() {
             const loca = location.href.split('/').pop();
-            window.location.href='/diary/rewrite/' + loca;
+            window.location.href = '/diary/rewrite/' + loca;
         }
     </script>
     <title>일기장 | 세부 정보</title>
@@ -54,17 +56,19 @@
 
 <body>
     <div class="container" id="bo">
-        <a class="none-drag" onclick="trash()" id="trash">삭제</a>
-        <a class="none-drag" id="rewrite" onclick="rewrite()">수정</a>
         <div>
             <h1 id="title"></h1>
             <small id="time"></small>
             <div id="content"></div>
         </div>
+        <ul class="btns">
+            <li class="hom"><a class="h" href="/diary">목록으로</a></li>
+            <li>|</li>
+            <li class="tra"><a onclick="rewrite()">수정</a></li>
+            <li>|</li>
+            <li class="del"><a onclick="trash()">삭제</a></li>
+        </ul>
     </div>
-    <footer onclick="window.location.href='/diary'">
-        <h3>목록</h3>
-    </footer>
 </body>
 
 </html>

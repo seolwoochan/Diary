@@ -6,43 +6,37 @@
     color: #0085ff;
 }
 
-a {
+.btns {
+    list-style: none;
+    cursor: default;
+    float: right;
+    margin: 40px 0 40px 0;
+    user-select: none;
+}
+.btns li {
     margin: 3px;
-    transition-duration: .2s;
-    transition-timing-function: ease;
-    padding: 8px 20px;
-    border-radius: 14px;
+    display: inline;
+}
+.del, .tra, .hom {
     cursor: pointer;
 }
-#trash:hover {
-    background-color: red;
-    color: white;
+.h {
+    color: #000000;
+    text-decoration: none;
 }
-#rewrite:hover {
-    background-color: #0085ff;
-    color: white;
+.h:hover {
+    color: darkmagenta;
+}
+.tra:hover {
+    color: #0085ff;;
+}
+.del:hover {
+    color: red;
 }
 
-a {
-    float: right;
-}
 
 #content {
     margin-top: 40px;
-}
-
-footer {
-    background-color: rgb(120, 120, 120);
-    line-height: 10vh;
-    cursor: pointer;
-    width: 100%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    height: 10vh;
-    color: white;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
 }
 
 @media screen and (max-width: 600px) {
